@@ -149,3 +149,11 @@ web_app "wordpress" do
   server_name server_fqdn
   server_aliases node['wordpress']['server_aliases']
 end
+
+directory "#{node['wordpress']['dir']}/wp-content/uploads/" do
+  owner "www-data"
+  group "www-data"
+  mode "0777"
+  action :create
+  recursive true
+end

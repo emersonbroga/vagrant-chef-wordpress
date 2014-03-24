@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
   config.vm.network :forwarded_port, guest: 80, host: 8000, auto_correct: true
 
   # Here's a folder for passing stuff back and forth
-  config.vm.synced_folder "./shared", "/home/vagrant/host_shared"
+  config.vm.synced_folder "./public", "/home/vagrant/host_shared"
 
   config.vm.provision :chef_solo do |chef|
     chef.json = {
